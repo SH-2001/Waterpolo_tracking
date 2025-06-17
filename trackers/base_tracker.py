@@ -1,8 +1,7 @@
 import supervision as sv
 from ultralytics import YOLO
 import numpy as np
-from collections import defaultdict, deque
-import cv2
+
 
 class BaseTracker:
     def __init__(self, model_path, confidence_threshold=0.20, frame_interval=5):

@@ -27,9 +27,9 @@ def read_save_video(input_video, output_video, timeline_path):
     out = cv2.VideoWriter(output_video, fourcc, fps, (width, height))
 
     # Initialize trackers with their respective models
-    player_tracker = PlayerTracker("models/player/best_player_v3.pt")
-    goalkeeper_tracker = GoalkeeperTracker("models/goalkeeper/best_goalkeeper_v3.pt")
-    ball_tracker = BallTracker("models/ball/best_ball_v3.pt")
+    player_tracker = PlayerTracker("models/player/best_player_v4.pt")
+    goalkeeper_tracker = GoalkeeperTracker("models/goalkeeper/best_goalkeeper_v5.pt")
+    ball_tracker = BallTracker("models/ball/best_ball_v6.pt")
     goal_tracker = GoalTracker("models/goal/best_goal_v2.pt")
 
     frame_count = 0
@@ -42,7 +42,6 @@ def read_save_video(input_video, output_video, timeline_path):
         # Get detections from each tracker
         player_tracks = player_tracker.detect_and_track(frame, frame_count)
         goalkeeper_tracks = goalkeeper_tracker.detect_and_track(frame, frame_count)
-        frame = goalkeeper_tracker.draw_debug_info(frame, goalkeeper_tracks)
         ball_tracks = ball_tracker.detect_and_track(frame, frame_count)
         goal_tracks = goal_tracker.detect_and_track(frame, frame_count)
 
