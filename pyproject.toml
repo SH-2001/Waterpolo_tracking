@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "waterpolo-tracking"
+version = "0.1.0"
+description = "Water polo tracking system using computer vision"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [
+    { include = "utils" },
+    { include = "pipelines" },
+    { include = "trackers" },
+    { include = "models" }
+]
+
+
+
+
+
+[tool.poetry.dependencies]
+python = ">=3.12.0"
+ultralytics = "^8.0.0"  # For YOLO models
+opencv-python = "^4.8.0"
+numpy = "^1.24.0"
+torch = "^2.2.0"
+torchvision = "^0.17.0"
+albumentations = "^2.0.7"  # For data augmentation
+pillow = "^10.0.0"
+scipy = "^1.12.0"  # For BoT-SORT
+lap = "^0.4.0"  # For linear assignment problem solving
+filterpy = "^1.4.5"  # For Kalman filtering
+scikit-image = "^0.22.0"  # For image processing
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0.0"
+black = "^23.0.0"
+isort = "^5.12.0"
+flake8 = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3 

@@ -1,0 +1,41 @@
+# Base paths
+paths:
+  root: .
+  models: models
+  data: data
+  processed: data/processed
+  raw: data/raw
+  label_studio: data/label_studio
+  videos: D:/Sander/Waterpolo_Tracking/videos/raw_video
+
+# Model versions
+model_versions:
+  ball: v5
+  player: v3
+  goalkeeper: v4
+  goal: v1
+
+# Dataset versions
+dataset_versions:
+  ball: v4
+  player: v4
+  goalkeeper: v5
+  goal: v2
+
+# Video files
+video: Hasselt-Mechelen/Q3.mp4
+
+# Detection parameters
+detection:
+  confidence_threshold: 0.1
+  frame_interval: 60
+  min_detections:
+    ball: 0
+    player: 8
+    goalkeeper: 0
+    goal: 0
+  max_detections:
+    ball: 4
+    player: 15
+    goalkeeper: 4
+    goal: 2 
